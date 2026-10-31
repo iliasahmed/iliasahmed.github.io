@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://iliasahmed.github.io/sitemap.xml
