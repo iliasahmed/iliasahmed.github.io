@@ -148,7 +148,7 @@ test('editorial project cards show context, attribution and conceptual artwork',
   const cards = [
     ['GLOBO', 'Mobile Tech Lead', 'GLOBO Language Solutions LLC', 'iOS and Android'],
     ['Evaly', 'Lead Software Engineer', 'Evaly.com.bd Ltd', 'seven mobile developers'],
-    ['FMS', 'Lead Mobile Developer', 'Jatri Services Ltd', 'fleet workflows'],
+    ['FMS', 'Lead Software Engineer', 'Jatri Services Ltd', 'Primary backend and frontend work'],
     ['CarBangla', 'Software Engineer / Senior Software Engineer', 'Carbangla Ltd', 'GPS tracking'],
   ]
   for (const [name, role, employer, contribution] of cards) {
@@ -261,11 +261,12 @@ test('QCoom case study links Android and shows the archived iOS app screen', asy
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true)
 })
 
-test('FMS case study includes the eJourney Driver Google Play app', async ({ page }) => {
+test('FMS case study presents eJourney Driver as a Flutter app on Google Play', async ({ page }) => {
   await page.goto('/#/projects/fms')
-  await expect(page.getByRole('heading', { name: 'FMS driver app' })).toBeVisible()
+  await expect(page.getByRole('heading', { name: 'eJourney Driver app' })).toBeVisible()
   const app = page.locator('.app-build-fleet')
   await expect(app.getByRole('heading', { name: 'eJourney Driver' })).toBeVisible()
+  await expect(app).toContainText('Flutter')
   const link = app.getByRole('link', { name: 'View on Google Play' })
   await expect(link).toHaveAttribute('href', 'https://play.google.com/store/apps/details?id=ai.ejourney.driver&hl=en')
   await expect(link).toHaveAttribute('target', '_blank')
