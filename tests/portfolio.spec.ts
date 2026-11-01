@@ -191,7 +191,7 @@ test('About section presents a client-focused profile, career history and educat
   await expect(about.locator('.experience-item')).toHaveCount(5)
   await expect(about.locator('.experience-item').first()).toContainText('Lead Software Engineer — FMS')
   await expect(about.getByRole('link', { name: 'Download my CV' })).toHaveAttribute('href', '/Ilias-Ahmed-CV.pdf')
-  await about.getByText('Education', { exact: true }).click()
+  await about.locator('.education summary').click()
   await expect(about).toContainText('Jahangirnagar University')
 })
 
