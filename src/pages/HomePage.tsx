@@ -1,4 +1,4 @@
-import { ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight, Braces, MapPin, Smartphone, Layers3, TabletSmartphone, PanelsTopLeft, Radio, Sparkles, ShieldCheck, GitBranch, UsersRound } from 'lucide-react'
+import { ArrowDown, ArrowRight, ArrowUpRight, Braces, MapPin, Smartphone, Layers3, TabletSmartphone, PanelsTopLeft, Radio, Sparkles, ShieldCheck, GitBranch, UsersRound } from 'lucide-react'
 import type { LucideIcon } from 'lucide-react'
 import { Link } from 'react-router-dom'
 import { profile, stats } from '../content/profile'
@@ -72,6 +72,13 @@ function Process() {
   </div></div></section>
 }
 function About() {
-  return <section id="about" className="section container about-grid"><div className="about-copy"><p className="eyebrow">ABOUT</p><h2>A decade of building useful software.</h2><p>I’m Ilias, a software engineer based in Dhaka, Bangladesh. My work spans communication, commerce, transport, and operational products.</p><p>I think beyond individual screens: about architecture, integrations, release quality, and the people maintaining the product. I’ve led teams of up to seven engineers and collaborate with international, remote product teams.</p><a className="inline-link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">More on LinkedIn <ArrowUpRight size={17}/></a><div><a className="cv-link" href="/Ilias-Ahmed-CV.pdf" download>Download my CV <ArrowDown size={15}/></a></div><details className="education"><summary>Education <span>+</span></summary>{education.map(item => <p key={item}>{item}</p>)}</details></div><div className="experience"><div className="timeline-label"><span>PROFESSIONAL EXPERIENCE</span><ArrowDownRight size={21}/></div>{experience.map((job, i) => <article className="experience-item" key={job.company}><div className={`timeline-dot ${i === 0 ? 'current' : ''}`}/><p className="experience-date">{job.date}</p><h3>{job.company}</h3><p className="experience-role">{job.role}</p><p>{job.detail}</p></article>)}</div></section>
+  return <section id="about" className="section about-section"><div className="container"><div className="about-panel">
+    <div className="about-copy"><p className="eyebrow">ABOUT</p><h2>Engineering for products people rely on.</h2><p>I’m Ilias Ahmed, a software engineer based in Dhaka, Bangladesh. My work spans language services, commerce, mobility, and fleet operations.</p><p>I work with international product teams across mobile, frontend, and backend development. I’ve also led mobile engineering teams of up to seven developers.</p>
+      <dl className="about-facts"><div><dt>Experience</dt><dd>10+ years building production software</dd></div><div><dt>Team leadership</dt><dd>Mobile teams of up to seven developers</dd></div><div><dt>Working with</dt><dd>International, cross-functional teams</dd></div></dl>
+      <div className="about-actions"><a className="button primary" href="/Ilias-Ahmed-CV.pdf" download>Download my CV <ArrowDown size={15}/></a><a className="inline-link" href={profile.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <ArrowUpRight size={17}/></a></div>
+      <details className="education"><summary>Education <span>+</span></summary>{education.map(item => <p key={item}>{item}</p>)}</details>
+    </div>
+    <div className="about-experience"><div className="experience-heading"><div><p className="eyebrow">CAREER HISTORY</p><h3>Experience in context</h3></div><span>2016 — Present</span></div><div className="experience">{experience.map((job, i) => <article className={`experience-item${i === 0 ? ' experience-item-current' : ''}`} key={job.company}><div className={`timeline-dot ${i === 0 ? 'current' : ''}`}/><p className="experience-date">{job.date}</p><h4>{job.company}</h4><p className="experience-role">{job.role}</p><p>{job.detail}</p></article>)}</div></div>
+  </div></div></section>
 }
 export function HomePage() { return <><Hero/><FeaturedWork/><Services/><Expertise/><Process/><About/><Contact/></> }

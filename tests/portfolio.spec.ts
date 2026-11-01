@@ -182,6 +182,19 @@ test('How I work makes the five collaboration steps easy to scan', async ({ page
   await expect(process.getByRole('link', { name: 'Discuss your project' })).toHaveAttribute('href', 'mailto:iliasahmed.se@gmail.com?subject=Project%20Inquiry')
 })
 
+test('About section presents a client-focused profile, career history and education', async ({ page }) => {
+  await page.goto('/')
+  const about = page.locator('#about')
+  await expect(about.getByRole('heading', { name: 'Engineering for products people rely on.' })).toBeVisible()
+  await expect(about.locator('.about-facts')).toContainText('10+ years building production software')
+  await expect(about.locator('.about-facts')).toContainText('up to seven developers')
+  await expect(about.locator('.experience-item')).toHaveCount(5)
+  await expect(about.locator('.experience-item').first()).toContainText('Lead Software Engineer — FMS')
+  await expect(about.getByRole('link', { name: 'Download my CV' })).toHaveAttribute('href', '/Ilias-Ahmed-CV.pdf')
+  await about.getByText('Education', { exact: true }).click()
+  await expect(about).toContainText('Jahangirnagar University')
+})
+
 test('mobile menu keyboard loop and desktop resize preserve usable navigation', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 })
   await page.goto('/')
