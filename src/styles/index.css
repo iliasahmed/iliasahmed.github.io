@@ -99,11 +99,21 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
 .fullstack-note h3 { font-size: 17px; }
 .fullstack-note p { font-size: 16px; color: var(--muted); margin-top: 4px; }
 .fullstack-note a { display: grid; place-items: center; margin-left: auto; width: 44px; height: 44px; }
-.process-grid { list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 26px; padding: 0; margin: 0; }
-.process-number { display: flex; align-items: center; justify-content: space-between; color: var(--accent); font-size: 13px; }
-.process-number > svg { width: 14px; }
-.process-grid h3 { font-size: 17px; margin-top: 18px; }
-.process-grid p { font-size: 16px; color: var(--muted); margin-top: 10px; }
+.process-section { background: #0d121e; }
+.process-shell { padding: clamp(24px, 4vw, 48px); border: 1px solid #30384b; border-radius: 16px; background: radial-gradient(ellipse at 5% 0%, rgba(166, 153, 255, .09), transparent 42%), #111827; }
+.process-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
+.process-heading .eyebrow { margin-bottom: 12px; }
+.process-intro { max-width: 430px; }
+.process-intro > p { color: var(--muted); font-size: 16px; }
+.process-intro > a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; margin-top: 12px; color: #d2caff; font-size: 15px; font-weight: 600; }
+.process-intro > a:hover { color: #fff; }
+.process-grid { position: relative; list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; padding: 0; margin: 38px 0 0; }
+.process-grid::before { content: ''; position: absolute; z-index: 0; top: 20px; left: 10%; right: 10%; height: 1px; background: #4a4569; }
+.process-grid li { position: relative; z-index: 1; min-width: 0; }
+.process-marker { display: grid; place-items: center; width: 40px; height: 40px; margin-inline: auto; border: 1px solid #7369a5; border-radius: 50%; background: #171c2c; color: #d2caff; font-size: 13px; font-variant-numeric: tabular-nums; }
+.process-card { min-height: 174px; margin-top: 16px; padding: 18px 16px; border: 1px solid #30384b; border-radius: 9px; background: rgba(8, 12, 21, .36); }
+.process-card h3 { font-size: 18px; line-height: 1.35; }
+.process-card p { margin-top: 10px; color: var(--muted); font-size: 15px; line-height: 1.65; }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
 .about-copy .eyebrow { margin-bottom: 14px; }
 .about-copy h2 { margin-bottom: 22px; }
@@ -245,7 +255,8 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
   .header-inner { gap: 22px; }
   .desktop-nav { gap: 18px; }
   .about-grid { gap: 45px; }
-  .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 30px; }
+  .process-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); row-gap: 22px; }
+  .process-grid::before { display: none; }
   .case-content { gap: 35px; }
   .app-build-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
@@ -322,12 +333,16 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
   .fullstack-note > svg { width: 20px; margin-top: 3px; }
   .fullstack-note a { display: none; }
   .fullstack-note p { font-size: 15px; }
-  .process-grid { grid-template-columns: 1fr; gap: 24px; }
-  .process-grid li { display: grid; grid-template-columns: 25px minmax(0, 1fr); column-gap: 18px; }
-  .process-number { align-self: start; grid-row: 1 / 3; padding-top: 3px; }
-  .process-number > svg { display: none; }
-  .process-grid h3 { margin: 0; font-size: 18px; }
-  .process-grid p { margin-top: 6px; font-size: 16px; }
+  .process-heading { display: block; }
+  .process-intro { margin-top: 18px; }
+  .process-grid { grid-template-columns: 1fr; gap: 0; margin-top: 24px; }
+  .process-grid::before { display: block; top: 20px; bottom: 20px; left: 19px; right: auto; width: 1px; height: auto; }
+  .process-grid li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 0 14px; }
+  .process-marker { grid-column: 1; grid-row: 1; margin: 18px 0 0; }
+  .process-card { grid-column: 2; min-height: 0; margin: 0; padding: 18px 0; border: 0; border-bottom: 1px solid #30384b; border-radius: 0; background: none; }
+  .process-grid li:last-child .process-card { border-bottom: 0; }
+  .process-card h3 { font-size: 18px; }
+  .process-card p { margin-top: 6px; font-size: 16px; }
   .about-grid { gap: 38px; }
   .about-copy > p:not(.eyebrow) { font-size: 16px; }
   .education p { font-size: 15px; }

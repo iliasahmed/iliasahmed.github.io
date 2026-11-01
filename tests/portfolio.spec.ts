@@ -170,6 +170,17 @@ test('editorial project cards show context, attribution and conceptual artwork',
   await expect(page.locator('main')).toBeFocused()
 })
 
+test('How I work makes the five collaboration steps easy to scan', async ({ page }) => {
+  await page.goto('/')
+  const process = page.locator('#process')
+  await expect(process.getByRole('heading', { name: 'How I work' })).toBeVisible()
+  await expect(process.locator('.process-grid > li')).toHaveCount(5)
+  for (const step of ['Understand', 'Plan', 'Build', 'Test & release', 'Improve']) {
+    await expect(process.locator('.process-grid')).toContainText(step)
+  }
+  await expect(process.getByRole('link', { name: 'Discuss your project' })).toHaveAttribute('href', 'mailto:iliasahmed.se@gmail.com?subject=Project%20Inquiry')
+})
+
 test('mobile menu keyboard loop and desktop resize preserve usable navigation', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 })
   await page.goto('/')
