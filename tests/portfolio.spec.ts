@@ -5,6 +5,7 @@ test('homepage is pre-rendered and public assets resolve', async ({ request }) =
   const response = await request.get('/')
   const html = await response.text()
   expect(html).toContain('I build mobile apps')
+  expect(html).toContain('using native development or Flutter')
   expect(html).toContain('The work behind the experience.')
   expect(html).toContain('GLOBO')
   expect(html).toContain('application/ld+json')

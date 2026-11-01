@@ -24,7 +24,7 @@ function Hero() {
     <p className="eyebrow">{profile.headline}</p>
     <div className="hero-copy">
       <h1 id="hero-title">I build mobile apps and <span><span className="nowrap">full-stack</span> software.</span></h1>
-      <p className="hero-description">I’m Ilias Ahmed, a software engineer with 10+ years of experience. I help businesses build reliable Android and iOS apps, connect complex systems, and take software from idea to launch.</p>
+      <p className="hero-description">I’m Ilias Ahmed, a software engineer with 10+ years of experience. I help businesses build reliable Android and iOS apps using native development or Flutter, connect complex systems, and take software from idea to launch.</p>
       <div className="hero-actions"><a className="button primary" href={profile.inquiry}>Discuss your project <ArrowUpRight size={18}/></a><Link className="button text-button" to="/#work">Explore my work <ArrowDown size={16}/></Link></div>
       <p className="hero-location"><MapPin size={14}/> Dhaka, Bangladesh · Working internationally</p>
     </div>
