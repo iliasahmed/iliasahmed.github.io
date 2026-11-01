@@ -207,9 +207,12 @@ test('mobile menu keyboard loop and desktop resize preserve usable navigation', 
   await expect(page.locator('#services')).toBeFocused()
 })
 
-test('GLOBO case study showcases both mobile app builds with official store listings', async ({ page }) => {
+test('GLOBO case study highlights live calls, AI translation and its mobile apps', async ({ page }) => {
   await page.setViewportSize({ width: 375, height: 812 })
   await page.goto('/#/projects/globo')
+  await expect(page.locator('main')).toContainText('Group video calls')
+  await expect(page.locator('main')).toContainText('Audio calls')
+  await expect(page.locator('main')).toContainText('Real-time AI translation')
   await expect(page.getByRole('heading', { name: 'GLOBO mobile apps' })).toBeVisible()
   const apps = page.locator('.app-build')
   await expect(apps).toHaveCount(3)

@@ -12,10 +12,10 @@ export const projects: Project[] = [
   {
     slug: 'globo', name: 'GLOBO', title: 'Connecting people. Across languages.',
     category: 'Real-time language services', visual: 'communication',
-    summary: 'Mobile experiences for on-demand interpretation, live communication, and AI-assisted speech.',
-    contributionSummary: 'Built GLOBO mobile apps for iOS and Android, modernized Android flows, and led a three-person team.',
+    summary: 'Mobile apps for video calls, group video calls, audio calls, and real-time AI translation.',
+    contributionSummary: 'Contributed to GLOBO’s iOS and Android apps, including live calls and real-time AI translation.',
     role: 'Mobile Tech Lead', employer: 'GLOBO Language Solutions LLC', period: 'Mar 2022 – Aug 2025',
-    tags: ['Android & iOS', 'Jetpack Compose', 'Real-time audio/video', 'AI speech'],
+    tags: ['Video calls', 'Group video calls', 'Audio calls', 'Real-time AI translation'],
     mobileAppsTitle: 'GLOBO mobile apps',
     mobileAppsIntro: 'I built GLOBO’s mobile apps as Mobile Tech Lead, working with a three-person team. The point-of-access app evolved from GLOBO HQ into GLOBO Connect. GLOBO GO is a Flutter app for managing interpreters.',
     mobileApps: [
@@ -38,12 +38,12 @@ export const projects: Project[] = [
     challenge: 'On-demand interpretation brings people together through live audio and video. The mobile experience needs to bring communication SDKs, notifications, and speech features into a coherent, dependable workflow.',
     contributions: [
       { title: 'iOS & Android app delivery', text: 'Built and delivered GLOBO mobile applications across iOS and Android, taking features from design and implementation through testing, production release, monitoring, and support as Mobile Tech Lead.' },
-      { title: 'Real-time communication', text: 'Built or integrated audio/video workflows with Twilio, Amazon Chime, Dyte, WebSocket, and push notifications.' },
+      { title: 'Live calls', text: 'Built and integrated one-to-one video calls, group video calls, and audio calls for GLOBO’s interpreting workflows, using Twilio, Amazon Chime, Dyte, WebSocket, and push notifications.' },
       { title: 'Architecture & modernization', text: 'Migrated Android flows from Java and XML to Kotlin and Jetpack Compose, and led a team of three developers.' },
-      { title: 'AI-assisted speech', text: 'Integrated speech translation, speech-to-text, and text-to-speech into mobile communication workflows.' },
+      { title: 'Real-time AI translation', text: 'Integrated real-time AI translation alongside speech-to-text and text-to-speech in mobile communication workflows.' },
     ],
     approach: 'Communication SDKs each bring their own lifecycle and integration concerns. My work connected these capabilities to the mobile application, while using Crashlytics, New Relic, and debugging tools to support production quality.',
-    outcome: 'Delivered and supported mobile communication features, modernized Android flows, and guided a small engineering team through ongoing product development.',
+    outcome: 'Delivered and supported live audio and video calling, real-time AI translation, and modernized Android experiences while guiding a three-person team.',
   },
   {
     slug: 'evaly', name: 'Evaly', title: 'From discovery to doorstep.',
