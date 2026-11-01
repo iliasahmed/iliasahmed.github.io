@@ -12,7 +12,7 @@ function NavigationEffects() {
     const pathChanged = previousPath.current !== pathname
     previousPath.current = pathname
     const project = projects.find(p => pathname === `/projects/${p.slug}`)
-    document.title = project ? `${project.name} Case Study | Ilias Ahmed` : pathname === '/' ? 'Ilias Ahmed | Mobile & Full-Stack Software Engineer' : 'Page Not Found | Ilias Ahmed'
+    document.title = project ? `${project.name} Case Study | Ilias Ahmed` : pathname === '/' ? 'Ilias Ahmed | Lead Mobile & Full-Stack Software Engineer' : 'Page Not Found | Ilias Ahmed'
     if (hash) {
       const target = document.getElementById(hash.slice(1))
       target?.scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' })
