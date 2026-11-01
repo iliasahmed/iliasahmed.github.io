@@ -30,11 +30,11 @@ export function Header() {
   }, [open])
   function close() { setOpen(false) }
   return <header className="site-header"><div className="container header-inner">
-    <Link to="/" className="brand" aria-label="Ilias Ahmed, home" onClick={close}><span className="monogram">ia<span>.</span></span><span>Ilias Ahmed<span className="brand-dot">.</span></span></Link>
+    <Link to="/" className="brand" aria-label="Ilias Ahmed, home" onClick={close}><span>Ilias Ahmed<span className="brand-dot">.</span></span></Link>
     <nav aria-label="Main navigation" className="desktop-nav">{nav.map(item => <Link key={item} to={`/#${item.toLowerCase()}`} aria-current={location.hash === `#${item.toLowerCase()}` ? 'location' : undefined}>{item}</Link>)}</nav>
     <a className="header-contact" href={profile.inquiry}>Let’s talk <ArrowUpRight size={15}/></a>
     <button ref={toggle} className="menu-toggle" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="mobile-navigation" onClick={() => setOpen(!open)}>{open ? <X/> : <Menu/>}</button>
-    {open && <nav ref={menu} id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">{nav.map((item, i) => <Link key={item} to={`/#${item.toLowerCase()}`} onClick={close}><span>0{i + 1}</span>{item}<ArrowUpRight size={20}/></Link>)}<p>Thoughtful software. Built together.</p></nav>}
+    {open && <nav ref={menu} id="mobile-navigation" className="mobile-nav" aria-label="Mobile navigation">{nav.map(item => <Link key={item} to={`/#${item.toLowerCase()}`} onClick={close}>{item}<ArrowUpRight size={20}/></Link>)}<p>Thoughtful software. Built together.</p></nav>}
   </div></header>
 }
 export function Footer() {

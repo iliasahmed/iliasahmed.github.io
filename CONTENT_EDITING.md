@@ -5,7 +5,7 @@ Use the master brief and original CV as source material. Preserve employer attri
 | Content | File |
 | --- | --- |
 | Name, headline, email, social profiles, proof metrics | `src/content/profile.ts` |
-| Four case studies, roles, contributions, supported tags | `src/content/projects.ts` |
+| Project pages, roles, contributions, supported tags | `src/content/projects.ts` |
 | Services and delivery process | `src/content/services.ts` |
 | Public skills and private-to-source review notes | `src/content/skills.ts` |
 | Employment and education | `src/content/experience.ts` |
@@ -13,13 +13,17 @@ Use the master brief and original CV as source material. Preserve employer attri
 | Page/social metadata, structured Person data | `index.html` |
 | Colors, spacing, typography, breakpoints | `src/styles/index.css` |
 
-The `backendReview` object is not imported by public components. Confirm the depth and wording of those individual technology claims before moving any into the published skills list. Never put secrets or confidential project information in source: the repository and frontend bundle are public.
+The `backendReview` object is not imported by public components. Confirm the depth and wording of those individual technology claims before moving any into the published skills list. Never put secrets or confidential project information in source or the frontend bundle.
 
 ## Project details
 
-Edit the typed project record, keeping its slug stable so shared hash links keep working. `challenge` describes the domain rather than an invented client brief. `contributions` states personal work. `outcome` should stay qualitative unless the CV supports a specific metric. Team leadership and former employment must not imply independent contracts or employer endorsements.
+Edit the typed project record, keeping its slug stable so shared hash links keep working. `summary` introduces the domain on the detail page; `contributionSummary` gives the concise personal-contribution description on its homepage card. `challenge` describes the domain rather than an invented client brief. `contributions` states personal work. `outcome` should stay qualitative unless the CV supports a specific metric. Team leadership and former employment must not imply independent contracts or employer endorsements. The optional `mobileApps` array showcases named products and platform builds, with public links where available; keep those links tied to the correct product and clearly distinguish separate apps from platform builds. For archived app imagery, set `screenshot`, an accurate descriptive `screenshotAlt`, and a `screenshotCaption` that names the platform shown. Keep screenshots in `public/` and use local paths; never label a screen as iOS if the capture is from Android.
 
-The current artwork is original conceptual CSS/SVG, labelled as illustration. To add a real screenshot, first obtain public-use permission and remove confidential data. Store an optimized WebP/AVIF image under `public/images/`, add typed media fields to the project data, and render semantic images with accurate alt text, explicit dimensions, and lazy loading where appropriate. Do not use mockups as purported product screenshots.
+Original SVG diagrams in `src/components/ProjectArt.tsx` illustrate communication, commerce, operational workflows, and routing. The typed `visual` field selects a diagram. Keep the visible “Conceptual illustration” captions on both cards and detail pages. The entire project card is one accessible link; do not put additional links inside it. To add a real screenshot, first obtain public-use permission and remove confidential data. Store an optimized WebP/AVIF image under `public/images/`, add typed media fields to the project data, and render semantic images with accurate alt text, explicit dimensions, and lazy loading where appropriate. Do not use mockups as purported product screenshots.
+
+## Visual direction
+
+The approved direction is Dark Editorial: deep navy, restrained lavender accents, layered project cards, original conceptual diagrams, and direct headings. Keep body text around 16–18px (15–16px or larger on mobile), secondary labels around 12–14px, and case-study paragraphs in a comfortable reading column. Prefer natural heading wrapping. Keep motion limited to brief interaction feedback and respect reduced motion. Avoid oversized hero artwork, neon, noisy backgrounds, and fake product screens. Preserve the factual proof metrics, case-study attribution, and prominent contact links.
 
 ## CV
 
