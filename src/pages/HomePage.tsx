@@ -19,6 +19,12 @@ const expertiseIcons: Record<(typeof skills)[number]['category'], LucideIcon> = 
   'Delivery & product': GitBranch,
   'Technical leadership': UsersRound,
 }
+const serviceIcons: Record<(typeof services)[number]['icon'], LucideIcon> = {
+  mobile: Smartphone,
+  web: PanelsTopLeft,
+  api: Braces,
+  architecture: Layers3,
+}
 function Hero() {
   return <section className="hero container" aria-labelledby="hero-title">
     <p className="eyebrow">{profile.headline}</p>
@@ -49,7 +55,14 @@ function FeaturedWork() {
   </section>
 }
 function Services() {
-  return <section id="services" className="section services-section"><div className="container"><SectionHeading label="SERVICES" title="How I can help" text="Whether you’re starting something new or improving an existing product, I can help with the parts that matter."/><div className="services-grid">{services.map(service => <article className="service-card" key={service.title}><h3>{service.title}</h3><p>{service.text}</p><span className="service-detail">{service.detail}</span></article>)}</div><div className="service-bottom"><span>One engineer. A connected view of your product.</span><a href={profile.inquiry}>Let’s find the right approach <ArrowRight size={17}/></a></div></div></section>
+  return <section id="services" className="section services-section"><div className="container"><div className="services-shell">
+    <div className="services-heading"><div><p className="eyebrow">SERVICES</p><h2>How I can help</h2></div><p>From a new product build to improving software already in use, I can help you plan and deliver the right engineering work.</p></div>
+    <div className="services-grid">{services.map((service, i) => { const Icon = serviceIcons[service.icon]; return <article className="service-card" key={service.title}>
+      <div className="service-card-top"><span className="service-icon"><Icon size={21} aria-hidden="true"/></span><span className="service-number">0{i + 1}</span></div>
+      <h3>{service.title}</h3><p>{service.text}</p><div className="service-scope"><span>Typical scope</span><p>{service.detail}</p></div>
+    </article> })}</div>
+    <div className="service-bottom"><span>One engineer. A connected view of your product.</span><a href={profile.inquiry}>Let’s find the right approach <ArrowRight size={17}/></a></div>
+  </div></div></section>
 }
 function Expertise() {
   return <section id="expertise" className="section container">

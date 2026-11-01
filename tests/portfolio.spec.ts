@@ -182,6 +182,23 @@ test('How I work makes the five collaboration steps easy to scan', async ({ page
   await expect(process.getByRole('link', { name: 'Discuss your project' })).toHaveAttribute('href', 'mailto:iliasahmed.se@gmail.com?subject=Project%20Inquiry')
 })
 
+test('Services explain client work, typical scope and the project inquiry action', async ({ page }) => {
+  await page.goto('/')
+  const services = page.locator('#services')
+  await expect(services.getByRole('heading', { name: 'How I can help' })).toBeVisible()
+  await expect(services.locator('.service-card')).toHaveCount(4)
+  for (const title of ['Mobile app development', 'Full-stack web applications', 'Backend APIs & integrations', 'Software architecture & modernization']) {
+    await expect(services.getByRole('heading', { name: title })).toBeVisible()
+  }
+  await expect(services.locator('.service-card').first()).toContainText('Flutter')
+  await expect(services.locator('.service-card').nth(2)).toContainText('REST APIs')
+  await expect(services.getByRole('link', { name: 'Let’s find the right approach' })).toHaveAttribute('href', 'mailto:iliasahmed.se@gmail.com?subject=Project%20Inquiry')
+  await page.setViewportSize({ width: 375, height: 812 })
+  const footerNote = services.locator('.service-bottom > span')
+  const footerLink = services.locator('.service-bottom > a')
+  expect((await footerLink.boundingBox())!.y).toBeGreaterThan((await footerNote.boundingBox())!.y)
+})
+
 test('About section presents a client-focused profile, career history and education', async ({ page }) => {
   await page.goto('/')
   const about = page.locator('#about')

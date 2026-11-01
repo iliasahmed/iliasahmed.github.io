@@ -1,8 +1,8 @@
 export const services = [
-  { icon: 'mobile', title: 'Mobile app development', text: 'Build and maintain Android and iOS apps, from core user journeys and API integrations through testing and release.', detail: 'Native Android · iOS · Flutter · Kotlin Multiplatform' },
-  { icon: 'web', title: 'Full-stack web applications', text: 'Web applications that connect your customer experience with the business logic and data behind it.', detail: 'Web interfaces · Application logic · Databases' },
-  { icon: 'api', title: 'Backend APIs & integrations', text: 'Connect your product to business systems, payments, real-time communication, and AI features through APIs.', detail: 'REST APIs · System integrations · Real-time features' },
-  { icon: 'architecture', title: 'Software architecture & modernization', text: 'Review and modernize an existing codebase, improve its structure, and support ongoing development and releases.', detail: 'Codebase reviews · Modernization · Delivery practices' },
+  { icon: 'mobile', title: 'Mobile app development', text: 'Build a new Android or iOS app, or extend an existing one. Implement core journeys, connect APIs, and support testing and release.', detail: 'Native Android · iOS · Flutter · Kotlin Multiplatform' },
+  { icon: 'web', title: 'Full-stack web applications', text: 'Build product interfaces and application logic that connect the customer experience to the data and workflows behind it.', detail: 'Web interfaces · Application logic · Data connections' },
+  { icon: 'api', title: 'Backend APIs & integrations', text: 'Connect a product to business systems, payments, real-time communication, or AI services through APIs.', detail: 'REST APIs · System integrations · Real-time features' },
+  { icon: 'architecture', title: 'Software architecture & modernization', text: 'Make an existing product easier to evolve: assess the codebase, identify practical improvements, and modernize its structure and delivery practices.', detail: 'Codebase reviews · Modernization · Maintainability' },
 ] as const
 export const process = [
   ['Understand', 'Start with your users, business goals, and the problem worth solving.'],

@@ -75,13 +75,24 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
 .project-read { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #d2caff; margin-top: auto; }
 .work-note { font-size: 14px; color: var(--muted); margin-top: 24px; max-width: 780px; }
 .services-section, .process-section { border-block: 1px solid var(--line); }
-.services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px 60px; }
-.service-card { padding-top: 24px; border-top: 1px solid var(--line); }
-.service-card h3 { font-size: 22px; letter-spacing: -.5px; line-height: 1.35; }
-.service-card > p { font-size: 17px; color: var(--muted); margin-top: 14px; }
-.service-detail { display: block; font-size: 14px; color: #b6c1d4; margin-top: 18px; line-height: 1.7; }
-.service-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-top: 36px; font-size: 14px; color: var(--muted); }
-.service-bottom > a { display: inline-flex; align-items: center; gap: 10px; color: var(--text); }
+.services-section { background: #0d121e; }
+.services-shell { padding: clamp(24px, 4vw, 48px); border: 1px solid #30384b; border-radius: 16px; background: radial-gradient(ellipse at 5% 0%, rgba(166, 153, 255, .08), transparent 40%), #111827; }
+.services-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 36px; }
+.services-heading .eyebrow { margin-bottom: 12px; }
+.services-heading > p { max-width: 460px; color: var(--muted); font-size: 16px; }
+.services-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 36px; }
+.service-card { display: flex; min-width: 0; min-height: 265px; flex-direction: column; padding: 22px; border: 1px solid #30384b; border-radius: 10px; background: rgba(8, 12, 21, .34); }
+.service-card-top { display: flex; align-items: center; justify-content: space-between; }
+.service-icon { display: grid; place-items: center; width: 42px; height: 42px; color: var(--accent); border: 1px solid #494666; border-radius: 9px; background: #1a2032; }
+.service-number { color: #9aa5ba; font-size: 13px; font-variant-numeric: tabular-nums; }
+.service-card h3 { margin-top: 20px; font-size: 22px; letter-spacing: -.5px; line-height: 1.35; }
+.service-card > p { margin-top: 10px; color: var(--muted); font-size: 16px; line-height: 1.65; }
+.service-scope { margin-top: auto; padding-top: 17px; border-top: 1px solid #30384b; }
+.service-scope > span { color: #c4baff; font-size: 12px; font-weight: 600; letter-spacing: .6px; text-transform: uppercase; }
+.service-scope > p { margin-top: 5px; color: #c6d0e0; font-size: 14px; line-height: 1.6; }
+.service-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 18px; margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14px; color: var(--muted); }
+.service-bottom > a { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; color: #d2caff; font-weight: 600; }
+.service-bottom > a:hover { color: #fff; }
 .skills-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
 .skills-grid .skill-card { min-width: 0; padding: 25px; background: var(--surface); border: 1px solid var(--line); border-radius: 10px; }
 .skills-grid .skill-card-core { border-color: #6c669b; }
@@ -330,11 +341,15 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
   .project-summary { font-size: 16px; }
   .project-attribution { font-size: 14px; margin-top: 20px; margin-bottom: 22px; }
   .work-note { font-size: 14px; }
-  .services-grid { gap: 26px; }
+  .services-heading { display: block; }
+  .services-heading > p { margin-top: 14px; }
+  .services-grid { grid-template-columns: 1fr; gap: 12px; margin-top: 24px; }
+  .service-card { min-height: 0; padding: 20px; }
   .service-card h3 { font-size: 21px; }
   .service-card > p { font-size: 16px; }
   .service-bottom { display: block; font-size: 14px; }
-  .service-bottom > a { margin-top: 14px; min-height: 44px; }
+  .service-bottom > span { display: block; }
+  .service-bottom > a { margin-top: 8px; min-height: 44px; }
   .skills-grid { grid-template-columns: 1fr; gap: 14px; }
   .skills-grid .skill-card { padding: 22px 20px; }
   .skill-card-heading { margin-bottom: 18px; }
