@@ -207,9 +207,14 @@ test('About section presents a client-focused profile, career history and educat
   await expect(about.locator('.about-facts')).toContainText('up to seven developers')
   await expect(about.locator('.experience-item')).toHaveCount(5)
   await expect(about.locator('.experience-item').first()).toContainText('Lead Software Engineer — FMS')
+  await expect(about.locator('.experience')).toContainText('orders, trips, vehicles, reservations, pricing, approvals, and invoicing')
+  await expect(about.locator('.experience')).toContainText('video, group video, and audio calls')
+  await expect(about.locator('.experience')).toContainText('Led seven mobile developers')
   await expect(about.getByRole('link', { name: 'Download my CV' })).toHaveAttribute('href', '/Ilias-Ahmed-CV.pdf')
-  await about.locator('.education summary').click()
-  await expect(about).toContainText('Jahangirnagar University')
+  await expect(about.getByRole('heading', { name: 'Education', exact: true })).toBeVisible()
+  await expect(about.locator('.education-item')).toHaveCount(2)
+  await expect(about.locator('.education-item').first()).toContainText('Jahangirnagar University')
+  await expect(about.locator('.education-item').nth(1)).toContainText('Daffodil International University')
 })
 
 test('mobile menu keyboard loop and desktop resize preserve usable navigation', async ({ page }) => {

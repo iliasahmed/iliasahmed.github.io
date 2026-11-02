@@ -139,11 +139,15 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
 .about-actions .button { min-height: 44px; padding: 10px 14px; }
 .inline-link { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15px; color: #d2caff; }
 .inline-link:hover, .cv-link:hover { text-decoration: underline; text-underline-offset: 4px; }
-.education { border-block: 1px solid var(--line); margin-top: 24px; color: #b6c1d4; font-size: 15px; }
-.education summary { display: flex; align-items: center; justify-content: space-between; padding-block: 15px; list-style: none; cursor: pointer; }
-.education summary::-webkit-details-marker { display: none; }
-.education[open] summary span { transform: rotate(45deg); }
-.education p { font-size: 14px; padding-bottom: 16px; }
+.education { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--line); color: #b6c1d4; }
+.education > h3 { margin-bottom: 12px; font-size: 17px; }
+.education-list { display: grid; gap: 9px; }
+.education-item { padding: 12px 14px; border: 1px solid var(--line); border-radius: 8px; background: rgba(8, 12, 21, .28); }
+.education-item-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.education-item h4 { font-size: 15px; }
+.education-item-heading > span { color: var(--muted); font-size: 13px; white-space: nowrap; }
+.education-item p { margin-top: 4px; font-size: 14px; line-height: 1.45; }
+.education-item .education-institution { color: var(--muted); }
 .about-experience { min-width: 0; padding: clamp(26px, 4vw, 48px); }
 .experience-heading { display: flex; align-items: flex-end; justify-content: space-between; gap: 20px; padding-bottom: 22px; border-bottom: 1px solid var(--line); }
 .experience-heading .eyebrow { margin-bottom: 9px; }
@@ -377,7 +381,7 @@ h2 { font-size: clamp(32px, 3.3vw, 44px); line-height: 1.18; letter-spacing: -1.
   .about-copy > p:not(.eyebrow) { font-size: 16px; }
   .about-experience { padding: 26px 22px; }
   .experience-heading h3 { font-size: 23px; }
-  .education p { font-size: 15px; }
+  .education-item p { font-size: 14px; }
   .contact-inner, .compact-contact .contact-inner { padding-block: 44px; }
   .contact-top { display: block; }
   .contact-top > span { display: block; margin-top: 12px; font-size: 13px; }
